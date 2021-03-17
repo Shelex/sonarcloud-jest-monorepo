@@ -37,8 +37,18 @@ jobs:
             -Dsonar.projectKey=sonarcloud-jest-${{ matrix.web }}
             -Dsonar.language=js
             -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.sources=src
+            -Dsonar.exclusions=**/test/*
             -Dsonar.sourceEncoding=UTF-8
             -Dsonar.javascript.node.maxspace=4096
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Clean up
+        env:
+          MFE: ${{ matrix.web }}
+        run: | 
+          cd web/$MFE
+          echo $PWD
+          rm -rf coverage
+          rm test-report.xml

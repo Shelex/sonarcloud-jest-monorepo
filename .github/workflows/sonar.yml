@@ -18,6 +18,7 @@ jobs:
         env:
           MFE: ${{ matrix.web }}
         run: |
+          yarn
           cd web/$MFE
           yarn
           echo "sonar.projectKey=sonarcloud-jest-$MFE\nsonar.organization=shelex\nsonar.exclusions=**/test/*\nsonar.language=js\nsonar.javascript.lcov.reportPaths=./coverage/lcov.info\nsonar.sourceEncoding=UTF-8\nsonar.javascript.node.maxspace=4096" > sonar.properties

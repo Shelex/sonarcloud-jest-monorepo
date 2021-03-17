@@ -36,7 +36,7 @@ jobs:
             -Dsonar.organization=shelex
             -Dsonar.projectKey=sonarcloud-jest-${{ matrix.web }}
             -Dsonar.language=js
-            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
             -Dsonar.sources=src
             -Dsonar.exclusions=**/test/*
             -Dsonar.sourceEncoding=UTF-8

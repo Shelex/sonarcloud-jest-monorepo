@@ -1,10 +1,36 @@
-const fn1 = val => val;
-const fn2 = val => val;
-const fn3 = val => val;
-const fn4 = val => val;
-const fn5 = val => val;
-const fn6 = val => val;
-const fn7 = val => val;
+const fn = val => {
+  console.log(val)
+  return typeof val === 'string' ? val : String(val)
+};
+
+const fn1 = val => {
+  const x = fn(val)
+  return x
+};
+const fn2 = val => {
+  const x = fn(val)
+  return x
+};
+const fn3 = val => {
+  const x = fn(val)
+  return x
+};
+const fn4 = val => {
+  const x = fn(val)
+  return x
+};
+const fn5 = val => {
+  const x = fn(val)
+  return x
+};
+const fn6 = val => {
+  const x = fn(val)
+  return x
+};
+const fn7 = val => {
+  const x = fn(val)
+  return x
+};
 
 module.exports = {
   fn1,

@@ -32,6 +32,8 @@ jobs:
           yarn test --collectCoverage --testResultsProcessor "jest-sonar-reporter"
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
+        with:
+          projectBaseDir: web/${{ matrix.web}}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

@@ -1,9 +1,13 @@
 node_modules
 web/clumsy_coala/node_modules
 web/clumsy_coala/coverage
+web/clumsy_coala/test-report.xml
 web/hairy_giraffe/node_modules
 web/hairy_giraffe/coverage
+web/hairy_giraffe/test-report.xml
 web/hilarious_hamster/node_modules
 web/hilarious_hamster/coverage
+web/hairy_giraffe/test-report.xml
 web/wild_badger/node_modules
 web/wild_badger/coverage
+web/hairy_giraffe/test-report.xml

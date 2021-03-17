@@ -21,8 +21,6 @@ jobs:
           yarn
           cd web/$MFE
           yarn
-          echo "sonar.projectKey=sonarcloud-jest-$MFE\nsonar.organization=shelex\nsonar.exclusions=**/test/*\nsonar.language=js\nsonar.javascript.lcov.reportPaths=./coverage/lcov.info\nsonar.sourceEncoding=UTF-8\nsonar.javascript.node.maxspace=4096" > sonar.properties
-          echo $PWD
       - name: Run Code coverage
         env:
           MFE: ${{ matrix.web }}
@@ -33,7 +31,14 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         with:
-          projectBaseDir: web/${{ matrix.web}}
+          projectBaseDir: web/${{ matrix.web }}
+          args: >
+            -Dsonar.organization=shelex
+            -Dsonar.projectKey=sonarcloud-jest-${{ matrix.web }}
+            -Dsonar.language=js
+            -Dsonar.javascript.lcov.reportPaths=./coverage/lcov.info
+            -Dsonar.sourceEncoding=UTF-8
+            -Dsonar.javascript.node.maxspace=4096
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

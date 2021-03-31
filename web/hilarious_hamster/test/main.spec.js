@@ -14,4 +14,8 @@ describe("others", () => {
   it("fn1 return value", () => {
       expect(fn1(value)).toBe(value)
   });
+
+  it("fn1 can work with other type of value", () => {
+      expect(fn1(true).toBe("true"))
+  })
 });

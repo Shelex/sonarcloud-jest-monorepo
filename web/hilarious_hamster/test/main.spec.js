@@ -15,7 +15,11 @@ describe("others", () => {
       expect(fn1(value)).toBe(value)
   });
 
-  it("fn1 can work with other type of value", () => {
+  it("fn1 can work with boolean", () => {
       expect(fn1(true).toBe("true"))
   })
+
+  it("fn1 can work with number", () => {
+    expect(fn1(5).toBe("5"))
+})
 });

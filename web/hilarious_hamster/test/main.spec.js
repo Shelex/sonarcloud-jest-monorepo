@@ -16,10 +16,10 @@ describe("others", () => {
   });
 
   it("fn1 can work with boolean", () => {
-      expect(fn1(true).toBe("true"))
+      expect(fn1(true)).toBe("true")
   })
 
   it("fn1 can work with number", () => {
-    expect(fn1(5).toBe("5"))
+    expect(fn1(5)).toBe("5")
 })
 });
